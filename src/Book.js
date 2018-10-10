@@ -3,20 +3,23 @@ import React, { Component } from 'react';
 export default class Book extends Component {
 
 	render() {
+		let displayedThumbnail = this.props.book.imageLinks ?
+		this.props.book.imageLinks.thumbnail :
+		'';
+
 		return (
 			<div className="book">
 				<div className="book-top">
 					<div className="book-cover" style={{
 						width: 128, height: 193,
-						backgroundImage: `url("${this.props.book
-							.imageLinks.thumbnail}")`
+						backgroundImage: `url("${displayedThumbnail}")`
 					}}></div>
 					<div className="book-shelf-changer">
 						<select
 							onChange={(event) => this.props.changeShelf(
 								this.props.book, event.target.value
 							)}
-							value={this.props.book.shelf}
+							value={this.props.currentShelf}
 						>
 							<option value="move" disabled>Move to...</option>
 							<option value="currentlyReading">Currently Reading</option>
@@ -30,5 +33,11 @@ export default class Book extends Component {
 				<div className="book-authors">{this.props.book.authors}</div>
 			</div>
 		)
+	}
+
+	newMethod() {
+		return this.props.book.imageLinks ?
+			this.props.book.imageLinks.thumbnail :
+			'';
 	}
 }

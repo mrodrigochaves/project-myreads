@@ -3,7 +3,7 @@ import * as BooksAPI from './BooksAPI';
 import Book from './Book';
 import { Link } from 'react-router-dom';
 
-export default class SearchBook extends Component {
+export default class BooksSearch extends Component {
   state = {
     query: '',
     searchBooks: []
@@ -17,6 +17,7 @@ export default class SearchBook extends Component {
   }
 
   updateSearchBooks = (query) => {
+
     if (query) {
       BooksAPI.search(query).then((searchBooks) => {
         if (searchBooks.error) {
@@ -58,14 +59,25 @@ export default class SearchBook extends Component {
         <div className="search-books-results">
           <ol className="books-grid">
             {
-              this.state.searchBooks.map(searchBook => (
-                <li key={searchBook.id}>
-                  <Book
-                    book={searchBook}
-                    changeShelf={this.props.changeShelf}
-                  />
-                </li>
-              ))
+              this.state.searchBooks.map(searchBook => {
+                let shelf = "none";
+
+                this.props.books.map(book => (
+                  book.id === searchBook.id ?
+                  shelf = book.shelf :
+                  ''
+                ));
+
+                return (
+                  <li key={searchBook.id}>
+                    <Book
+                      book={searchBook}
+                      changeShelf={this.props.changeShelf}
+                      currentShelf={shelf}
+                    />
+                  </li>
+                );
+              })
             }
           </ol>
         </div>

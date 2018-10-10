@@ -26,6 +26,7 @@ export default class MainBook extends Component {
 													<Book 
 													book={book}
 													changeShelf={this.props.changeShelf}
+													currentShelf="currentlyReading"
 													/>
 												</li>
 											))
@@ -45,6 +46,7 @@ export default class MainBook extends Component {
 													<Book 
 													book={book}
 													changeShelf={this.props.changeShelf}
+													currentShelf="wantToRead"
 													/>
 												</li>
 											))
@@ -65,6 +67,7 @@ export default class MainBook extends Component {
 													<Book
 													book={book}
 													changeShelf={this.props.changeShelf}
+													currentShelf="read"
 													/>
 												</li>
 											))

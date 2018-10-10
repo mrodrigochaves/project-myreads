@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 export default class Book extends Component {
 
 	render() {
+
 		let displayedThumbnail = this.props.book.imageLinks ?
 		this.props.book.imageLinks.thumbnail :
 		'';
@@ -13,7 +14,9 @@ export default class Book extends Component {
 					<div className="book-cover" style={{
 						width: 128, height: 193,
 						backgroundImage: `url("${displayedThumbnail}")`
-					}}></div>
+					}}>
+					</div>
+
 					<div className="book-shelf-changer">
 						<select
 							onChange={(event) => this.props.changeShelf(
@@ -28,6 +31,7 @@ export default class Book extends Component {
 							<option value="none">None</option>
 						</select>
 					</div>
+					
 				</div>
 				<div className="book-title">{this.props.book.title}</div>
 				<div className="book-authors">{this.props.book.authors}</div>

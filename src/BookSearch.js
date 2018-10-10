@@ -64,8 +64,8 @@ export default class BooksSearch extends Component {
 
                 this.props.books.map(book => (
                   book.id === searchBook.id ?
-                  shelf = book.shelf :
-                  ''
+                    shelf = book.shelf :
+                    ''
                 ));
 
                 return (

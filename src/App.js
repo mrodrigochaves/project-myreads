@@ -29,19 +29,23 @@ export default class BooksApp extends Component {
 
     return (
       <div className="app">
+
       <Route exact path="/" render={() =>(
          <BookMain
           books={this.state.books}
           changeShelf={this.changeShelf} 
           />
           )} />
+
        <Route path="/search" render={() =>(
         <BooksSearch
         changeShelf={this.changeShelf}
         books={this.state.books}
       />
       )} />
+
       </div>
+      
     );
   }
 }

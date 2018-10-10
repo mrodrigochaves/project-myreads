@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default class MainBook extends Component {
 
 	render() {
-		console.log(this.props.books);
+
 		return (
 
 			<div className="list-books">
@@ -17,16 +17,17 @@ export default class MainBook extends Component {
 						<div className="bookshelf">
 							<h2 className="bookshelf-title">Currently Reading</h2>
 							<div className="bookshelf-books">
+
 								<ol className="books-grid">
-								{
+									{
 										this.props.books
-										.filter(book => book.shelf === 'currentlyReading')
+											.filter(book => book.shelf === 'currentlyReading')
 											.map(book => (
 												<li key={book.id}>
-													<Book 
-													book={book}
-													changeShelf={this.props.changeShelf}
-													currentShelf="currentlyReading"
+													<Book
+														book={book}
+														changeShelf={this.props.changeShelf}
+														currentShelf="currentlyReading"
 													/>
 												</li>
 											))
@@ -37,16 +38,17 @@ export default class MainBook extends Component {
 						<div className="bookshelf">
 							<h2 className="bookshelf-title">Want to Read</h2>
 							<div className="bookshelf-books">
+
 								<ol className="books-grid">
 									{
 										this.props.books
-										.filter(book => book.shelf === 'wantToRead')
+											.filter(book => book.shelf === 'wantToRead')
 											.map(book => (
 												<li key={book.id}>
-													<Book 
-													book={book}
-													changeShelf={this.props.changeShelf}
-													currentShelf="wantToRead"
+													<Book
+														book={book}
+														changeShelf={this.props.changeShelf}
+														currentShelf="wantToRead"
 													/>
 												</li>
 											))
@@ -55,19 +57,21 @@ export default class MainBook extends Component {
 								</ol>
 							</div>
 						</div>
+
 						<div className="bookshelf">
 							<h2 className="bookshelf-title">Read</h2>
 							<div className="bookshelf-books">
+
 								<ol className="books-grid">
-								{
+									{
 										this.props.books
-										.filter(book => book.shelf === 'read')
+											.filter(book => book.shelf === 'read')
 											.map(book => (
 												<li key={book.id}>
 													<Book
-													book={book}
-													changeShelf={this.props.changeShelf}
-													currentShelf="read"
+														book={book}
+														changeShelf={this.props.changeShelf}
+														currentShelf="read"
 													/>
 												</li>
 											))
@@ -77,11 +81,13 @@ export default class MainBook extends Component {
 						</div>
 					</div>
 				</div>
+
 				<div className="open-search">
-					<Link 
-					to="/search"
+					<Link
+						to="/search"
 					>Add a book</Link>
 				</div>
+
 			</div>
 
 		)

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SearchBooks from './SearchBooks';
+// import SearchBooks from './SearchBooks';
 import MainBook from './MainBook';
 import * as BooksAPI from './BooksAPI'
 import './App.css';
@@ -16,12 +16,23 @@ export default class BooksApp extends Component {
     
   }
 
+  changeShelf = (book, shelf) => {
+    BooksAPI.update(book, shelf);
+
+    BooksAPI.getAll().then((books) => {
+      this.setState({ books: books })
+    })
+  }
+
   render() {
-    console.log(this.state.books);
+    
     return (
       <div className="app">
       <MainBook
-      books={this.state.books} />
+      books={this.state.books}
+      changeShelf={this.changeShelf} />
+      {/* <SearchBooks 
+      books={this.state.books}/> */}
        </div>
     );
   }

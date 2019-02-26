@@ -1,6 +1,12 @@
 # My Reads Project
 
-This repo is a code-along with my project in the [Web Front-End Avançado Nanodegree program](https://br.udacity.com/course/front-end-web-developer-nanodegree--nd001-br-advanced)
+This repository is a code-along with my project in the [Web Front-End Avançado Nanodegree program](https://br.udacity.com/course/front-end-web-developer-nanodegree--nd001-br-advanced)
+
+## Project Overview
+
+- Creating a bookcase application that allows you to select and sort the books you have ever read is
+reading or wanting to read. Using good React design practice that is to create new JS files for each component and use import/require statements to include them where they are needed.
+
 
 ## Project Setup
 

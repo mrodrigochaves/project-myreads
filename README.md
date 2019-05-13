@@ -10,7 +10,7 @@ reading or wanting to read. Using good React design practice that is to create n
 
 ## Project Setup
 
-1. Clone the Project - `git clone https://github.com/udacity/reactnd-project-myreads-starter.git`
-2. Go into the directory where the project now lives - `cd reactnd-project-myreads-starter`
+1. Clone the Project - `git clone git@github.com:mrodrigochaves/project-myreads.git`
+2. Go into the directory where the project now lives - `cd project-myreads`
 3. Install the dependencies - `npm install`or [Yarn install](https://yarnpkg.com/pt-BR/docs/getting-started)
 4. Start the app - `npm start` or `yarn start`
